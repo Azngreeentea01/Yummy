@@ -23,12 +23,27 @@
 
   function clearFilters(){
     const clear=$('[data-clear]');if(!clear)return;
-    clear.addEventListener('click',()=>{
-      location.href='results.html';
+    clear.addEventListener('click',()=>{ location.href='results.html'; });
+  }
+
+  function cachedModeControls(){
+    $$('[data-directions]').forEach(btn=>{
+      btn.disabled=true;
+      btn.classList.add('cached-disabled');
+      btn.textContent='Directions · live map';
+      btn.title='Directions will be enabled when a permitted live map provider is connected.';
     });
+    const official=$('[data-official]');
+    if(official){
+      official.disabled=true;
+      official.classList.add('cached-disabled');
+      official.textContent='Official menu · live source';
+      official.title='Official menu links will be enabled when a permitted live menu source is connected.';
+    }
   }
 
   const homeSort=$('[data-home-sort]');if(homeSort){homeSort.addEventListener('change',sortHome);sortHome()}
   const radius=$('[data-radius]');if(radius){radius.addEventListener('change',applyRadius);applyRadius();const root=$('[data-results]');if(root)new MutationObserver(()=>applyRadius()).observe(root,{childList:true})}
   clearFilters();
+  cachedModeControls();
 })();
