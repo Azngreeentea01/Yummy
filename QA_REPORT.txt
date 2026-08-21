@@ -1,0 +1,43 @@
+YUMMY V3 QA REPORT
+==================
+
+Scope
+- Cached/local build only; no paid live restaurant/map/menu/rating APIs.
+- Visual direction follows the approved Yummy mockup: warm cream UI, orange-red accents, Asian cuisine focus, list+map discovery, source-labelled ratings, menu detail pages.
+
+Automated/static checks completed
+PASS - index.html, results.html, restaurant.html, saved.html resolve locally.
+PASS - CSS, JavaScript, data, hero image, food images, and cached map image resolve locally.
+PASS - JavaScript syntax check (Node) for app.js and data.js.
+PASS - 8 restaurants have unique IDs, <=10 mile demo distances, ratings, menu data, and map positions.
+PASS - The same restaurant ID drives list card, map pin, saved state, detail page, ratings and menu.
+PASS - Multi-word search logic returns sensible cached matches (including spicy noodles).
+PASS - Cuisine, open-now, rating filters and result sorting are wired.
+PASS - Saved restaurants use localStorage and have a dedicated page.
+PASS - Detail Menu / Overview / Reviews / Photos tabs are functional.
+PASS - Mobile navigation and List/Map switch are wired.
+PASS - Manual location fallback is available when geolocation permission fails.
+PASS - Empty result state is implemented.
+PASS - Keyboard focus styles and keyboard card activation are implemented.
+PASS - All principal imagery is stored locally; the site does not need remote image URLs.
+PASS - Final ZIP successfully imported into Canva as a website design for an additional visual sanity check.
+
+Visual QA note
+- Automated local Chromium screenshot rendering did not complete reliably in the tool environment. Final pixel-level browser acceptance should be run on the target Ryzen VM/Chrome.
+
+Known intentional limitations of cached mode
+- Directions, satellite map mode and official menu links are placeholders until permitted live providers are selected.
+- Restaurant names, addresses, prices and ratings are curated demo/cached data for UI testing, not claims about real businesses.
+- No payment/order transaction flow is implemented because Yummy is currently a discovery/menu product prototype.
+
+Recommended VM acceptance checklist
+1. Run start-yummy.bat and open http://localhost:8080.
+2. Test at 1440x900 desktop and 390x844 mobile.
+3. Search: pho, spicy noodles, korean bbq, sushi, curry.
+4. Toggle cuisine, Open now, Rating 4.5+, and sort by distance/rating.
+5. Hover/select restaurant cards and confirm matching map pin/highlight.
+6. Open every restaurant and verify menu/ratings/name remain the same restaurant.
+7. Save two restaurants and verify saved.html persists after refresh.
+8. Check Menu, Overview, Reviews and Photos tabs.
+9. Deny location permission and confirm manual city/ZIP fallback.
+10. Confirm no horizontal overflow or clipped buttons on mobile.
