@@ -49,7 +49,7 @@ window.YUMMY_DATA = {
     },
     {
       id:'masala-courtyard', name:'Masala Courtyard', cuisines:['Indian'], type:'Indian', price:'$$', distance:6.4, open:true, closes:'10:00 PM',
-      rating:4.7, reviews:730, address:'240 Garden Boulevard, Anytown, CA 90210', delivery:'$2.49 delivery · 30–45 min', image:'assets/japanese-2.svg', pin:[65,63],
+      rating:4.7, reviews:730, address:'240 Garden Boulevard, Anytown, CA 90210', delivery:'$2.49 delivery · 30–45 min', image:'assets/thai.svg', pin:[65,63],
       ratings:[['Google',4.7],['Yelp',4.6]], popular:['Butter Chicken','Biryani','Garlic Naan'],
       menuSource:'Cached restaurant menu snapshot · demo data for local testing',
       menu:[{category:'Popular dishes',items:[['Butter Chicken','$17.95','Tomato cream curry, tandoori chicken',['Popular']],['Chicken Biryani','$16.95','Basmati rice, saffron, spices',['Popular']]]}]
